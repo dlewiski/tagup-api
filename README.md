@@ -1,24 +1,46 @@
-# README
+# Tagup Asset RESTful API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Backend technical challenge for Tagup Backend Engineer position
 
-Things you may want to cover:
+## November 6, 2020
 
-* Ruby version
+#### By David Lewis
 
-* System dependencies
+## Technologies Used
 
-* Configuration
+- Ruby, Rails, PostgreSQL, Rspec
 
-* Database creation
+## Description
 
-* Database initialization
+## Specs
 
-* How to run the test suite
+## Setup/Installation Requirements
 
-* Services (job queues, cache servers, search engines, etc.)
+Clone to your Desktop.
+In terminal, navigate to the root directory of the project.
+Recreate the database by using the following commands in terminal:
 
-* Deployment instructions
+```
+$ bundle
+```
 
-* ...
+```
+$ rake db:create
+```
+
+```
+$ rake db:migrate
+```
+
+Use this command in terminal to run app on the localhost:
+
+```
+$ rails s
+```
+
+Open your browser and go to localhost:3000
+
+## License
+
+Licensed under the MIT License.
+Copyright (c) 2020 **_David Lewis_**
