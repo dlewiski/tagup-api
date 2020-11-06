@@ -24,7 +24,10 @@ Purpose of this project is to demonstrate coding abilities and style by creating
 
 The endpoint reponses will return JSON and will only include the following fields:
 
-**_timestamp_** **_name_** **_watts_** **_actives_**
+**_timestamp_**
+**_name_**
+**_watts_**
+**_active_**
 
 ### API Endpoints
 
