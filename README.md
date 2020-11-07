@@ -13,18 +13,18 @@ Purpose of this project is to demonstrate coding abilities and style by creating
 ```JS
 {
   "_id": id,
-  "timestamp": timestamp,
+  "restarted_at": timestamp,
   "name": string,
   "watts": float,
   "active": boolean,
-  "creationDate": timestamp,
-  "lastModificationDate": timestamp
+  "created_at": timestamp,
+  "updated_at": timestamp
 }
 ```
 
 The endpoint reponses will return JSON and will only include the following fields:
 
-**_timestamp_**
+**_restarted_at_**
 **_name_**
 **_watts_**
 **_active_**
@@ -73,11 +73,11 @@ $ bundle
 ```
 
 ```
-$ rake db:create
+$ rails db:create
 ```
 
 ```
-$ rake db:migrate
+$ rails db:migrate
 ```
 
 Use this command in terminal to run app on the localhost:
