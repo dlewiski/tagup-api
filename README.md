@@ -33,7 +33,7 @@ The endpoint reponses will return JSON and will only include the following field
 
 | Route                 | Description              |
 | --------------------- | ------------------------ |
-| /api/assets           | List all the assets      |
+| /api/list             | List all the assets      |
 | /api/create           | Create a record          |
 | /api/read/:recordId   | Read a specific record   |
 | /api/modify/:recordId | Update a specific record |
