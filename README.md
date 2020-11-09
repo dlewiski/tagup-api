@@ -2,9 +2,11 @@
 
 Backend technical challenge for Tagup Backend Engineer position
 
-### By David Lewis
+Deployed at https://tagup-api.herokuapp.com
 
-### November 6, 2020
+## By David Lewis
+
+## November 6, 2020
 
 ## Description
 
@@ -69,6 +71,10 @@ The primary technology Ruby on Rails was chosen because of its efficient structu
 ## Specs
 
 ## Setup/Installation Requirements
+
+You can use the deployed API by using the base url https://tagup-api.herokuapp.com followed by the previously outlined API routes. For example to get the list of all assests in the database you make a GET request to:
+
+`https://tagup-api.herokuapp.com/api/list`
 
 Clone to your Desktop.
 In terminal, navigate to the root directory of the project.
