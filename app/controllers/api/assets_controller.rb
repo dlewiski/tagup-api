@@ -51,7 +51,8 @@ module Api
       asset = Asset.find(params[:id])
 
       if asset.destroy
-        head :no_content
+        # head :no_content
+        render json: {message: "asset deleted"}
       else
         render json: {error: asset.error.messages}, status: 442
       end
