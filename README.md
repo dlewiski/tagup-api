@@ -24,7 +24,7 @@ Purpose of this project is to demonstrate coding abilities and style by creating
 
 The endpoint reponses will return JSON and will only include the following fields:
 
-**_restarted_at_**
+**_restarted_/_at_**
 **_name_**
 **_watts_**
 **_active_**
@@ -87,6 +87,13 @@ $ rails s
 ```
 
 Open your browser and go to localhost:3000
+
+## Future Improvements and Final Thoughts
+
+Here a some other key features I would add:
+
+- Authentication, ensure only those that have been verfied can use our API. ESPECIALLY deleting assets.
+- Validation, examples might include determine if we want asset names to be of a certain length and/or watts should be limited to a certain number of decimal points
 
 ## License
 
