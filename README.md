@@ -50,6 +50,7 @@ The endpoint reponses will return JSON and will only include the following field
 
 - Ruby on Rails
 - PostgreSQL
+- Heroku
 
 The primary technology Ruby on Rails was chosen because of its efficient structure and ease in setting up and scaling an API. It is very strict in its MVC pattern which enables consistentcy around formatting and route creation. It is also easy to seed and modify the database which was created using PostgreSQL. I feel it has a straitforward pattern for creating a RESTful API and also ships with certain features like timestamps for every new entry to the database.
 
