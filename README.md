@@ -4,9 +4,9 @@ Backend technical challenge for Tagup Backend Engineer position
 
 Deployed at https://tagup-api.herokuapp.com
 
-## By David Lewis
+### By David Lewis
 
-## November 6, 2020
+### November 6, 2020
 
 ## Description
 
@@ -68,13 +68,13 @@ The primary technology Ruby on Rails was chosen because of its efficient structu
 - Routes
   - config/routes.rb
 
-## Specs
-
 ## Setup/Installation Requirements
 
 You can use the deployed API by using the base url https://tagup-api.herokuapp.com followed by the previously outlined API routes. For example to get the list of all assests in the database you make a GET request to:
 
 `https://tagup-api.herokuapp.com/api/list`
+
+If you wish to run this app locally then please follow these instructions:
 
 Clone to your Desktop.
 In terminal, navigate to the root directory of the project.
@@ -92,13 +92,17 @@ $ rails db:create
 $ rails db:migrate
 ```
 
-Use this command in terminal to run app on the localhost:
+Use this command in the terminal to run app on the localhost:3000
 
 ```
 $ rails s
 ```
 
 Open your browser and go to localhost:3000
+
+You can now make API request following the outline API routes. For example:
+
+`http://localhost:3000/api/list` to return all assets in your local database
 
 ## Future Improvements and Final Thoughts
 
