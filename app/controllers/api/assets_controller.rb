@@ -7,8 +7,6 @@ module Api
       assets = Asset.all
 
       render json: return_all_assets_fields(assets)
-
-      # render json: AssetSerializer.new(assets).serializable_hash.to_json
     end
 
     # /api/read/:id
@@ -24,12 +22,12 @@ module Api
     # create a new asset
     # POST
     def create
-      @asset = Asset.new(asset_params)
+      aasset = Asset.new(asset_params)
 
       if asset.save
-        render json: @asset
+        render json: return_asset_fields(asset)
       else 
-        render json: {error: @asset.error.messages}, status: 442
+        render json: {error: aasset.error.messages}, status: 442
       end
     end
 
@@ -37,12 +35,12 @@ module Api
     # update asset based upon id provided
     # PUT/PATCH
     def update 
-      @asset = Asset.find(params[:id])
+      asset = Asset.find(params[:id])
 
-      if @asset.update(asset_params)
-        render json: @asset
+      if asset.update(asset_params)
+        render json: return_asset_fields(asset)
       else
-        render json: {error: @asset.error.messages}, status: 442
+        render json: {error: asset.error.messages}, status: 442
       end
     end
 
@@ -50,25 +48,32 @@ module Api
     # delete asset based upon id provided
     # DELETE
     def destroy 
-      @asset = Asset.find(params[:id])
+      asset = Asset.find(params[:id])
 
-      if @asset.destroy
+      if asset.destroy
         head :no_content
       else
-        render json: {error: @asset.error.messages}, status: 442
+        render json: {error: asset.error.messages}, status: 442
       end
     end
 
     private
 
-    def return_all_assets_fields(assets)\
-      assets.each do |asset|
-        {name: asset.name, active: asset.active, watts: asset.watts, restarted_at: asset.restarted_at}
-      end
+    def show_milliseconds(time)
+      (time.to_f * 1000).to_i
+    end
+
+    def return_all_assets_fields(assets)
+      assets.map { |asset| return_asset_fields(asset) }
     end
 
     def return_asset_fields(asset)
-      {name: asset.name, active: asset.active, watts: asset.watts, restarted_at: asset.restarted_at}
+      {
+        name: asset.name, 
+        active: asset.active, 
+        watts: asset.watts, 
+        restarted_at: show_milliseconds(asset.restarted_at)
+      }
     end
 
     def asset_params

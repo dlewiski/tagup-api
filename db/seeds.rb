@@ -11,5 +11,5 @@ Asset.create([
     name: 'Seeded asset', 
     watts: 10.01, 
     active: true, 
-    restarted_at: Time.zone.parse("2020-10-21 23:59:59").to_f}
+    restarted_at: Time.zone.now.end_of_day}
 ])
