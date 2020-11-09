@@ -22,12 +22,12 @@ module Api
     # create a new asset
     # POST
     def create
-      aasset = Asset.new(asset_params)
+      asset = Asset.new(asset_params)
 
       if asset.save
         render json: return_asset_fields(asset)
       else 
-        render json: {error: aasset.error.messages}, status: 442
+        render json: {error: asset.errors}, status: 442
       end
     end
 
@@ -69,6 +69,7 @@ module Api
 
     def return_asset_fields(asset)
       {
+        id: asset.id,
         name: asset.name, 
         active: asset.active, 
         watts: asset.watts, 
