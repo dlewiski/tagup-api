@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Asset.create([
+  { 
+    name: 'Seeded asset', 
+    watts: 10.01, 
+    active: true, 
+    restarted_at: Time.zone.now.end_of_day}
+])

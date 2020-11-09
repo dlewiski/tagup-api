@@ -13,24 +13,27 @@ Purpose of this project is to demonstrate coding abilities and style by creating
 ```JS
 {
   "_id": id,
-  "timestamp": timestamp,
+  "restarted_at": timestamp,
   "name": string,
   "watts": float,
   "active": boolean,
-  "creationDate": timestamp,
-  "lastModificationDate": timestamp
+  "created_at": timestamp,
+  "updated_at": timestamp
 }
 ```
 
 The endpoint reponses will return JSON and will only include the following fields:
 
-**_timestamp_** **_name_** **_watts_** **_actives_**
+**_restarted_/_at_**
+**_name_**
+**_watts_**
+**_active_**
 
 ### API Endpoints
 
 | Route                 | Description              |
 | --------------------- | ------------------------ |
-| /api/assets           | List all the assets      |
+| /api/list             | List all the assets      |
 | /api/create           | Create a record          |
 | /api/read/:recordId   | Read a specific record   |
 | /api/modify/:recordId | Update a specific record |
@@ -70,11 +73,11 @@ $ bundle
 ```
 
 ```
-$ rake db:create
+$ rails db:create
 ```
 
 ```
-$ rake db:migrate
+$ rails db:migrate
 ```
 
 Use this command in terminal to run app on the localhost:
@@ -84,6 +87,13 @@ $ rails s
 ```
 
 Open your browser and go to localhost:3000
+
+## Future Improvements and Final Thoughts
+
+Here a some other key features I would add:
+
+- Authentication, ensure only those that have been verfied can use our API. ESPECIALLY deleting assets.
+- Validation, examples might include determine if we want asset names to be of a certain length and/or watts should be limited to a certain number of decimal points
 
 ## License
 
