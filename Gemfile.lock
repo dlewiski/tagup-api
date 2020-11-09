@@ -75,8 +75,6 @@ GEM
       concurrent-ruby (~> 1.0)
     jbuilder (2.10.1)
       activesupport (>= 5.0.0)
-    jsonapi-serializer (2.1.0)
-      activesupport (>= 4.2)
     launchy (2.5.0)
       addressable (~> 2.7)
     listen (3.2.1)
@@ -209,7 +207,6 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   jbuilder (~> 2.7)
-  jsonapi-serializer
   launchy
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)

@@ -4,18 +4,20 @@ module Api
     # Return all the assets
     # GET
     def index 
-      @assets = Asset.all
+      assets = Asset.all
 
-      render json: @assets
+      render json: return_all_assets_fields(assets)
+
+      # render json: AssetSerializer.new(assets).serializable_hash.to_json
     end
 
     # /api/read/:id
     # return asset based upon id provided
     # GET
     def show 
-      @asset = Asset.find(params[:id])
+      asset = Asset.find(params[:id])
 
-      render json: @asset
+      render json: return_asset_fields(asset)
     end
 
     # /api/create
@@ -58,6 +60,16 @@ module Api
     end
 
     private
+
+    def return_all_assets_fields(assets)\
+      assets.each do |asset|
+        {name: asset.name, active: asset.active, watts: asset.watts, restarted_at: asset.restarted_at}
+      end
+    end
+
+    def return_asset_fields(asset)
+      {name: asset.name, active: asset.active, watts: asset.watts, restarted_at: asset.restarted_at}
+    end
 
     def asset_params
       params.require(:asset).permit(:name, :watts, :active, :restarted_at)
