@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'welcome#index'
   # Specified path properties to match route naming with requirements in README. Depending on architecture discussions and company needs, I might encourge to stick with the tradiational Rails routing to utilize the strength and consitency of this technology. Normally this would be done by just declaring the following line
 
   # namespace :api do
