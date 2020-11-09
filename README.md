@@ -24,41 +24,47 @@ Purpose of this project is to demonstrate coding abilities and style by creating
 
 The endpoint reponses will return JSON and will only include the following fields:
 
-**_restarted_/_at_**
-**_name_**
-**_watts_**
-**_active_**
+```JS
+{
+  "_id": id,
+  "restarted_at": timestamp in milliseconds,
+  "name": string,
+  "watts": float,
+  "active": boolean,
+}
+```
 
 ### API Endpoints
 
-| Route                 | Description              |
-| --------------------- | ------------------------ |
-| /api/list             | List all the assets      |
-| /api/create           | Create a record          |
-| /api/read/:recordId   | Read a specific record   |
-| /api/modify/:recordId | Update a specific record |
-| /api/remove/:recordId | Delete a specific record |
+| Route                 | Description             |
+| --------------------- | ----------------------- |
+| /api/list             | List all the assets     |
+| /api/create           | Create an asset         |
+| /api/read/:recordId   | Read a specific asset   |
+| /api/modify/:recordId | Update a specific asset |
+| /api/remove/:recordId | Delete a specific asset |
 
 ## Technologies Used
 
 - Ruby on Rails
 - PostgreSQL
-- Rspec
 
-The primary technology Ruby on Rails was chosen because of its efficient structure and ease in setting up and scaling an API. It is very strict in its MVC pattern which enables consistentcy around formatting and route creation. It is also easy to seed and modify the database which will be created using PostgreSQL. I feel it has a straitforward pattern for creating a RESTful API and also ships with certain features like timestamps for every new entry to the database.
+The primary technology Ruby on Rails was chosen because of its efficient structure and ease in setting up and scaling an API. It is very strict in its MVC pattern which enables consistentcy around formatting and route creation. It is also easy to seed and modify the database which was created using PostgreSQL. I feel it has a straitforward pattern for creating a RESTful API and also ships with certain features like timestamps for every new entry to the database.
 
 ## Architecture
 
-- Testing
-  -- Rspec
 - Asset Model
-- Asset Migrations
-  -- Create assets table and specify fields and type
+  - app/models/asset.rb
+- Asset Migration
+  - db/migrate/20201107045714_create_assets.rb
+  - Create assets table and specify fields and type
 - Asset Controller
-  -- Create all endpoint logic
-  --- list, create, show, update, destroy
-  --- ensure they only return requested fields
+  - app/controllers/api/assets_controller.rb
+  - Create all endpoint logic
+  - list, create, show, update, destroy
+  - ensure they only return requested fields
 - Routes
+  - config/routes.rb
 
 ## Specs
 
@@ -94,6 +100,10 @@ Here a some other key features I would add:
 
 - Authentication, ensure only those that have been verfied can use our API. ESPECIALLY deleting assets.
 - Validation, examples might include determine if we want asset names to be of a certain length and/or watts should be limited to a certain number of decimal points
+
+One key area I did not get to was testing. This can de done with Rspec and my plan is to create unit tests to ensure certain routes return expected results.
+
+I also got a bit hung up on the requirement to store the timestamps as milliseconds. Ruby on Rails automatically stores these timestamps in UTC format and there a ton of options to get various information out of those timestamps. I decided to create a private method to return that timestamp as milliseconds. This method can be found in the assets controller.
 
 ## License
 
