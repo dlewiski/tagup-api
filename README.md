@@ -1,7 +1,5 @@
 # Tagup Asset RESTful API
 
-Backend technical challenge for Tagup Backend Engineer position
-
 Deployed at https://tagup-api.herokuapp.com
 
 ### By David Lewis
